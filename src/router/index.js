@@ -15,7 +15,8 @@ const routes = [
       title: 'Login - 登录',
       hideInMenu: true
     },
-    component: () => import('@/views/login/login.vue')
+    // component: () => import('@/views/login/login.vue')
+    component: () => import('@/views/login/ots-login.vue')
   },
   {
     path: '/',
@@ -53,12 +54,13 @@ const routes = [
     path: '/join',
     name: 'join',
     component: Main,
+    redirect: '/join_page',
     meta: {
       hideInBread: true
     },
     children: [
       {
-        path: 'join_page',
+        path: '/join_page',
         name: 'join_page',
         meta: {
           icon: '_qq',
@@ -235,6 +237,15 @@ const routes = [
         component: () => import('@/views/update/update-paste.vue')
       }
     ]
+  },
+  {
+    path: '/less',
+    name: 'less',
+    meta: {
+      icon: '',
+      title: 'css预选择器',
+    },
+    component: () => import('@/views/less/less.vue')
   },
   {
     path: '/excel',

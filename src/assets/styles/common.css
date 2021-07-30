@@ -1,0 +1,15 @@
+body {
+    --base-color: #006AFF;
+    --base-darken-color: #0B66E6;
+    --base-lighten-color: #EBF5FF;
+    --l-color: --color-01;
+    --d-color: --color-07;
+    --title-color: --color-08;
+    --bgColor: --color-02;
+    --success-bgcolor: #DCF8E8;
+    --success-color: #1DBF60;
+    --error-bgcolor: #FFECE5;
+    --error-color: #FE5958;
+    --warn-bgcolor: #FFF0E0;
+    --warn-color: #F27900;
+}
