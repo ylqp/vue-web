@@ -1,3 +1,21 @@
+//mp
+.createStyle(@index) when(@index < 100) {
+    @c: @index * 1;
+    @d: (1px * @index);
+    .mt@{c}{
+        margin-top: @d;
+    }
+    .mb@{c}{
+        margin-bottom: @d;
+    }
+    .ml@{c}{
+        margin-left: @d;
+    }
+    .mr@{c}{
+        margin-right: @d;
+    }
+}
+.createStyle(100);
 //颜色模块
 @color-01: #FFFFFF;
 @color-02: #F4F5F8;
@@ -18,8 +36,8 @@ body {
 @base-darken-color: var(--base-darken-color);
 @base-lighten-color: var(--base-lighten-color);
 
-@l-color: @color-01;
-@d-color:  @color-07;
+@l-color: @color-01; /*light*/
+@d-color: @color-07; /*dark*/
 @title-color: @color-08;
 @bgColor: @color-02;
 

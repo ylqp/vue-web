@@ -4,7 +4,13 @@ module.exports = {
     // 打包路径
     publicPath: process.env.NODE_ENV === 'production' ? './' : '/',
     devServer: {
-        port: 1028
+        port: 1028,
+        proxy: {
+            '/api': {
+                target: 'http://172.16.6.130:8080/oxer',
+                pathRewrite: {'^/api': ''},
+            }
+        }
     },
     chainWebpack: config => {
         const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
@@ -18,7 +24,7 @@ function addStyleResource (rule) {
         .loader('style-resources-loader')
         .options({
             patterns: [
-                path.resolve(__dirname, './src/assets/styles/common.less'),
+                path.resolve(__dirname, './src/assets/styles/lessConfig.less'),
             ],
         })
 }
